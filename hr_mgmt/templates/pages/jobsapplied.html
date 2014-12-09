@@ -1,0 +1,19 @@
+{% block title %}
+{{ heading or "Jobs Applied"}}
+{% endblock %}
+{% block content %}
+<div><style>
+	.page-header {
+color: white;
+background: #263248;
+text-align: center;
+padding: 5px 5px;
+}
+</style>
+	<table id='jobs' style="width:100%">			 
+	</table>
+</div>
+<script>
+	{% include "templates/includes/jobsapplied.js" %}
+</script>
+{% endblock %}
