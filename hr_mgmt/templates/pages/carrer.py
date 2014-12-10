@@ -37,9 +37,19 @@ def get_jobs(keyword=None,jobid=None,experience=None,location=None,role=None,job
 
 @frappe.whitelist(allow_guest='True')
 def get_job(job):
-	#frappe.errprint(job)
-	res=frappe.db.sql("""select name,job_title,location,experience_required,role,qualification_required,skills_required,role,job_description from `tabJob Description` where name=%s """,job )
+	usr=''
+	res1=frappe.db.sql("""select name from `tabUser` where user_type='Website User' and name=%s """,frappe.session.user)
+	if res1:
+		usr='Yes'
+	else:
+		usr='No'
+	#frappe.errprint(usr)
+	res2=frappe.db.sql("""select name,job_title,location,experience_required,role,qualification_required,skills_required,role,job_description from `tabJob Description` where name=%s """,job )
 	#frappe.errprint(res)
+	res={
+		'res':res2,
+		'usr':usr
+	}
 	return res
 
 @frappe.whitelist(allow_guest='True')
@@ -80,9 +90,9 @@ def removefile(fileid,_type='POST'):
 
 @frappe.whitelist(allow_guest='True')
 def getcarrier():
-	frappe.errprint("fileid")
+	# frappe.errprint("fileid")
 	res=frappe.db.sql("""select value from `tabSingles` where doctype='Carrier Content' and field='content'""",as_dict=1)
-	frappe.errprint(res)
+	# frappe.errprint(res)
 	return {
 	"res":res
 	}	
