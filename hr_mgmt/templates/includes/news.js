@@ -34,7 +34,7 @@ var count=0;
 				if(r.message) {
 					//console.log(r.message);
 					var $table1=$(document).find('#news')
-                    var h = "<br><ul id='list'>"
+                    var h = "<br><ul id='list' style='padding:0'>"
                     for (i=0;i<r.message.length;i++){
                         //var j=i+1
                         count+=1;

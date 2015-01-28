@@ -1,9 +1,7 @@
-
 $(document).ready(function() {
-console.log("hiii");
-/*frappe.call({
+frappe.call({
             type: "POST",
-            method: "hr_mgmt.templates.pages.jobsapplied.get_jobs",
+            method: "hr_mgmt.templates.pages.jba.get_jobs",
             callback: function(r) {
                 if(r.message) {
                     //console.log(r.message);
@@ -24,5 +22,5 @@ console.log("hiii");
                        }$(h).appendTo('#jobs');
                   }         
                 }
-        })*/
+        })
 });
