@@ -32,10 +32,9 @@ var clear_data = function(){
     	</td><td><div class="form-group"><input class="form-control" name="location" type="text" placeholder="Location"/></div>\
     	</td><td><div class="form-group"><input class="form-control" name="role" type="text" placeholder="Role" /></div></td></tr>\
     	 <td><input class="form-control" name="job_from_date" type="date" placeholder="Posted Date From" /></div>\
-    	</td><td><input class="form-control" name="job_to_date" type="date" placeholder="Posted Date To" /></div></tr><br>\
-    <tr><td><br><div class="form-group"><button  class="btn btn-primary btn-search">Search Jobs</button></div></td>\
-    <td><div class="form-group"><button class="btn btn-primary btn-search uop">Register & Upload Resume</button></div></td>\
-    </tr></table></table><div class="res" width="100%"></div>').appendTo('#carrer');
+    	</td><td><input class="form-control" name="job_to_date" type="date" placeholder="Posted Date To" /></div></td><td align="center"><p><div class="form-group">\
+        <button  class="btn btn-primary btn-search">&nbsp;&nbsp;&nbsp;Search Jobs</button></div></td>\
+    <td></td></tr></table></table><div class="res" width="100%"></div>').appendTo('#carrer');
     $('#carrer').find('.btn-search').click(function() {         
             show_details(); 
                        
@@ -74,17 +73,18 @@ var show_details = function(){
 				if(r.message) {                    
                     //console.log("result cleared");
 					var $table1=$(document).find('.res')
-					var h = "<table width='100%' border='1'><thead style='padding=0px;'><tr style='padding=0px;'><th>#</th><th>Job ID</th><th>Role</th><th>Job Title</th><th>Location</th><th>Experience</th><th>Posted Date</th></tr></thead><tbody style='padding=0px;'>"
+					var h = "<table width='100%' border='1'><thead style='padding-left:5px'><tr style='padding=0px;'><th style='padding-left:5px'>Sr No.</th><th style='padding-left:5px'>Job ID</th><th style='padding-left:5px'>Role</th><th style='padding-left:5px'>Job Title</th><th style='padding-left:5px'>Location</th><th style='padding-left:5px'>Experience</th><th style='padding-left:5px'>Posted Date</th><th style='padding-left:5px'>Job details</th></tr></thead><tbody style='padding=0px;'>"
                     for (i=0;i<r.message.length;i++){
                         var j=i+1
                         h += '<tr style="padding=0px;">'
-                        h += '<td>'+j+'</td>'
-                        h += "<td><a onClick=call_job('"+r.message[i][0]+"')>"+r.message[i][0]+"</a></td>"
-                        h += '<td>'+r.message[i][1]+'</td>'
-                        h += '<td>'+r.message[i][2]+'</td>'
-                        h += '<td>'+r.message[i][3]+'</td>'
-                        h += '<td>'+r.message[i][4]+'</td>'
-                        h += '<td>'+r.message[i][5]+'</td></tr>'                       
+                        h += '<td style="padding-left:5px">'+j+'</td>'
+                        h += "<td style='padding-left:5px'>"+r.message[i][0]+"</td>"
+                        h += '<td style="padding-left:5px">'+r.message[i][1]+'</td>'
+                        h += '<td style="padding-left:5px">'+r.message[i][2]+'</td>'
+                        h += '<td style="padding-left:5px">'+r.message[i][3]+'</td>'
+                        h += '<td style="padding-left:5px">'+r.message[i][4]+'</td>'
+                        h += '<td style="padding-left:5px">'+r.message[i][5]+'</td>' 
+                        h += "<td align='center'><button class='btn btn-primary btn-send' onclick=call_job('"+r.message[i][0]+"') style='background-color:#336699; color:#FFFFFF; font-size:12px; height:30px; width:100px; margin-bottom: 1px; margin-top: 1px; padding-top: 5px;'>Apply Now</button></td></tr>"                
                        }
                     h+='</tbody></table>'
                     $(h).appendTo($table1);
@@ -118,7 +118,7 @@ var call_job = function(job){
 					$(jb).appendTo('#carrer');
                   }	
                 if (r.message['usr']=='Yes'){
-                  $('<br><button  class="btn btn-primary btn-apply">Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button><div class="res" width="100%"></div>').appendTo('#carrer');		
+                  $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button><div class="res" width="100%"></div>').appendTo('#carrer');		
                   $('#carrer').find('.btn-apply').click(function() {         
                         $('.btn-apply').prop("disabled", true);
                         apply_job(r.message['res'][0][0])                        
@@ -130,7 +130,7 @@ var call_job = function(job){
 
                    }
                 else{
-                    $('<br><button  class="btn btn-primary btn-apply">Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
+                    $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
                      $('#carrer').find('.btn-apply').click(function() {         
                         //$('.btn-apply').prop("disabled", true);
                         alert("You have not logged in . Please login for apply for job.");                       
