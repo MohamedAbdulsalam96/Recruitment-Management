@@ -18,8 +18,8 @@ base_template="templates/hcapita_base.html"
 #app_include_js = "/assets/frappe/js/frappe/upload.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/hr_mgmt/css/hr_mgmt.css"
-# web_include_js = "/assets/hr_mgmt/js/hr_mgmt.js"
+web_include_css = "/assets/css/hr_mgmt.css"
+web_include_js = "/assets/js/hr_mgmt.js"
 
 web_include_css = "/assets/css/hr_mgmt.css"
 web_include_js = "/assets/js/hr_mgmt.js"
