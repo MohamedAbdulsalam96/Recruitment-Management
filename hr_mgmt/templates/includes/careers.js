@@ -5,7 +5,7 @@ var $table1=$(document).find('#carrer')
         method:"hr_mgmt.templates.pages.carrer.getcarrier",
         callback: function(r) {
                 if(r.message) {                    
-                  var h = "<div id='content'>"+r.message.res[0]['value']+"</div>"
+                  var h = "<div>"+r.message.res[0]['value']+"</div>"
                   h+='<br><table cellspacing="3"width="100%">\
                         <tr><td><div class="form-group" style="width:20%;"><button  class="btn btn-primary btn-send">Search Jobs</button></div></td>\
                         </tr></table>'

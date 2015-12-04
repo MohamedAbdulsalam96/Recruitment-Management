@@ -117,3 +117,7 @@
 .navbar-collapse {
   padding-left: 30% !important;
 }
+
+.form-horizontal {
+  padding-top: 50px !important;
+}
