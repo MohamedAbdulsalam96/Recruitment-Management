@@ -1,6 +1,8 @@
-{% block title %}{{ heading or "Contact Us"}}{% endblock %}
-
+{% block title %}
+{{ "Contact Us"}}
+{% endblock %}
 {% block content %}
+<h2 class="text-center"><b>Our Services</b></h2>
 <!-- no-sidebar -->
 <div class="contact-content">
 	
@@ -8,7 +10,7 @@
 		<div class="col-md-8">
 			<section id="intro-txt">
     			<div class="container">
-        			<div class="hcapita-text text-justify">
+        			<div class="hcapita-text text-justify"  style="padding-top:0px">
 						<p>{{ introduction or "" }}</p>
 					</div>
 				</div>

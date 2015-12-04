@@ -1,0 +1,16 @@
+{% block title %}
+{{ "Our Services"}}
+{% endblock %}
+{% block content_body %}
+<section id="intro-txt">
+    <div class="container overflow-hidden">
+        <h2 class="text-center"><b>Careers</b></h2>
+        <div class="hcapita-text text-justify">
+			<table id='carrer' style="width:100%">			 
+			</table>
+		</div>
+	</div>
+<script>
+	{% include "templates/includes/careers.js" %}
+</script>
+{% endblock %}
