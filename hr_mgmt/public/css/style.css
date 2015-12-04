@@ -1,62 +1,35 @@
 @font-face {
     font-family: 'ubunturegular';
-<<<<<<< HEAD
     src: url('fonts/ubuntu-r-webfont.eot');
     src: url('fonts/ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/ubuntu-r-webfont.woff2') format('woff2'),
          url('fonts/ubuntu-r-webfont.woff') format('woff'),
          url('fonts/ubuntu-r-webfont.ttf') format('truetype'),
          url('fonts/ubuntu-r-webfont.svg#ubunturegular') format('svg');
-=======
-    src: url('assets/hr_mgmt/fonts/ubuntu-r-webfont.eot');
-    src: url('assets/hr_mgmt/fonts/ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'),
-         url('assets/hr_mgmt/fonts/ubuntu-r-webfont.woff2') format('woff2'),
-         url('assets/hr_mgmt/fonts/ubuntu-r-webfont.woff') format('woff'),
-         url('assets/hr_mgmt/fonts/ubuntu-r-webfont.ttf') format('truetype'),
-         url('assets/hr_mgmt/fonts/ubuntu-r-webfont.svg#ubunturegular') format('svg');
->>>>>>> 86e4811a05bf4e69bfb03d3b14eeae5b5493a36e
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntulight';
-<<<<<<< HEAD
     src: url('fonts/ubuntu-l-webfont.eot');
     src: url('fonts/ubuntu-l-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/ubuntu-l-webfont.woff2') format('woff2'),
          url('fonts/ubuntu-l-webfont.woff') format('woff'),
          url('fonts/ubuntu-l-webfont.ttf') format('truetype'),
          url('fonts/ubuntu-l-webfont.svg#ubuntulight') format('svg');
-=======
-    src: url('assets/hr_mgmt/fonts/ubuntu-l-webfont.eot');
-    src: url('assets/hr_mgmt/fonts/ubuntu-l-webfont.eot?#iefix') format('embedded-opentype'),
-         url('assets/hr_mgmt/fonts/ubuntu-l-webfont.woff2') format('woff2'),
-         url('assets/hr_mgmt/fonts/ubuntu-l-webfont.woff') format('woff'),
-         url('assets/hr_mgmt/fonts/ubuntu-l-webfont.ttf') format('truetype'),
-         url('assets/hr_mgmt/fonts/ubuntu-l-webfont.svg#ubuntulight') format('svg');
->>>>>>> 86e4811a05bf4e69bfb03d3b14eeae5b5493a36e
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntumedium';
-<<<<<<< HEAD
     src: url('fonts/ubuntu-m-webfont.eot');
     src: url('fonts/ubuntu-m-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/ubuntu-m-webfont.woff2') format('woff2'),
          url('fonts/ubuntu-m-webfont.woff') format('woff'),
          url('fonts/ubuntu-m-webfont.ttf') format('truetype'),
          url('fonts/ubuntu-m-webfont.svg#ubuntumedium') format('svg');
-=======
-    src: url('assets/hr_mgmt/fonts/ubuntu-m-webfont.eot');
-    src: url('assets/hr_mgmt/fonts/ubuntu-m-webfont.eot?#iefix') format('embedded-opentype'),
-         url('assets/hr_mgmt/fonts/ubuntu-m-webfont.woff2') format('woff2'),
-         url('assets/hr_mgmt/fonts/ubuntu-m-webfont.woff') format('woff'),
-         url('assets/hr_mgmt/fonts/ubuntu-m-webfont.ttf') format('truetype'),
-         url('assets/hr_mgmt/fonts/ubuntu-m-webfont.svg#ubuntumedium') format('svg');
->>>>>>> 86e4811a05bf4e69bfb03d3b14eeae5b5493a36e
     font-weight: normal;
     font-style: normal;
 }
@@ -134,7 +107,6 @@
 .hcapita-text {
   padding-top: 50px;
   font-size: 16px;
-<<<<<<< HEAD
 }
 
 .contact-contact {
@@ -148,6 +120,4 @@
 
 .form-horizontal {
   padding-top: 50px !important;
-=======
->>>>>>> 86e4811a05bf4e69bfb03d3b14eeae5b5493a36e
 }
