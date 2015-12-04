@@ -110,3 +110,7 @@ web_include_js = "/assets/js/hr_mgmt.js"
 # 	"frappe.core.doctype.event.event.get_events": "hr_mgmt.event.get_events"
 # }
 
+# Fixtures
+# ---------------------------------
+
+fixtures = ["Web Page", "Website Settings"]

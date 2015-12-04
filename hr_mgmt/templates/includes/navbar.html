@@ -1,8 +1,6 @@
 <header>
   <nav class="navbar navbar-default navbar-main" role="navigation">
     <div class="container" >
-      <table cellspacing="20" width="100%">
-          <tr><td rowspan='2'>
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
           data-target=".navbar-responsive-collapse">
@@ -12,20 +10,22 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/home"><img src="assets/hr_mgmt/images/logo.png" alt="Human Capita" title="Human Capita" /></a>
-      </div><!-- </td><td style='float:right'><a href="/create-profile">Sign Up </a>&nbsp;&nbsp;&nbsp;<a href="/login">Login</a></td> --></tr><tr><td>
+      </div>
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         {% if top_bar_items -%}
-        <ul class="nav navbar-nav navbar-left" style='width:100%'>
+        <ul class="nav navbar-nav navbar-left">
           {%- for page in top_bar_items -%}
           {% if not page.parent_label and not page.right -%}
           {% include "templates/includes/navbar_link.html" %}
           {%- endif -%}
           {%- endfor %}
-          <!-- <li><a href="/login">Login</a></li>
-          <li><a href="/create-profile">Sign Up</a></li> -->
+          <li><a href="/login">Login</a></li>
+          <li><a href="/create-profile">Sign Up</a></li>
+          <!-- {%- if not post_login -%} -->
+          <!-- {%- endif -%} -->
         </ul>
         {%- endif %}
-        </td><td><ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
           {%- for page in top_bar_items -%}
           {% if not page.parent_label and page.right -%}
           {% include "templates/includes/navbar_link.html" %}
@@ -58,7 +58,7 @@
             </ul>
           </li>
         </ul>
-      </div></td></tr></table>
+      </div>
     </div>
   </nav>
 </header>
