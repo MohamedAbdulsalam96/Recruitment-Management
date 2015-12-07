@@ -105,7 +105,7 @@ var call_job = function(job){
     $("#carrer").empty();
     $('<div class="jobdtl" width="100%"></div>').appendTo('#carrer');
     frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.get_job",
+        method:"hr_mgmt.templates.pages.careers.get_job",
         args:{'job':job},        
 		callback: function(r) {
             //console.log(r.message['res'])
@@ -143,7 +143,7 @@ var call_job = function(job){
 
 var apply_job = function(jobid){
     frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.apply_job",
+        method:"hr_mgmt.templates.pages.careers.apply_job",
         args:{
             "jobid":jobid,            
         },        
