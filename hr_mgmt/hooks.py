@@ -8,6 +8,8 @@ app_email = "gangadhar.k@indictranstech.com"
 app_url = "google.com"
 app_version = "0.0.1"
 
+base_template="templates/hcapita_base.html"
+
 # Includes in <head>
 # ------------------
 
@@ -16,8 +18,11 @@ app_version = "0.0.1"
 #app_include_js = "/assets/frappe/js/frappe/upload.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/hr_mgmt/css/hr_mgmt.css"
-# web_include_js = "/assets/hr_mgmt/js/hr_mgmt.js"
+web_include_css = "/assets/css/hr_mgmt.css"
+web_include_js = "/assets/js/hr_mgmt.js"
+
+web_include_css = "/assets/css/hr_mgmt.css"
+web_include_js = "/assets/js/hr_mgmt.js"
 
 # Home Pages
 # ----------
@@ -105,3 +110,7 @@ app_version = "0.0.1"
 # 	"frappe.core.doctype.event.event.get_events": "hr_mgmt.event.get_events"
 # }
 
+# Fixtures
+# ---------------------------------
+
+fixtures = ["Web Page", "Website Settings"]
