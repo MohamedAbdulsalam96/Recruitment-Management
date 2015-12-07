@@ -113,4 +113,4 @@ web_include_js = "/assets/js/hr_mgmt.js"
 # Fixtures
 # ---------------------------------
 
-fixtures = ["Web Page", "Website Settings"]
+fixtures = ["Website Settings"]
