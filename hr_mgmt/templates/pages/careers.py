@@ -90,9 +90,8 @@ def removefile(fileid,_type='POST'):
 
 @frappe.whitelist(allow_guest='True')
 def getcarrier():
-	#frappe.errprint("fileid")
 	res=frappe.db.sql("""select main_section from `tabWeb Page` where name='your-carrer'""",as_dict=1)
-	#frappe.errprint(res)
+	frappe.errprint(res)
 	return {
-	"res":res
+		"res":res
 	}	
