@@ -1,0 +1,11 @@
+{
+	"css/hr_mgmt.css": [
+		"public/css/animate.css",
+		"public/css/bootstrap.css",
+		"public/css/style.css"
+	],
+	"js/hr_mgmt.js": [
+		"public/js/wow.min.js"
+	]
+}
+

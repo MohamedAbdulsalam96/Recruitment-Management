@@ -1,26 +1,28 @@
 frappe.provide("frappe.ui.form");
 $(document).ready(function() {
-//console.log("calling hr_mgmt.templates.pages.carrer.getcarrier");
-var $table1=$(document).find('#carrer')
-   frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.getcarrier",
-        callback: function(r) {
-		//console.log("r.message");
-		//console.log(r.message['res'][0]['main_section']);
-                if(r.message) {                    
-                  var h = "<div id='content'>"+r.message['res'][0]['main_section']+"</div>"
-                  h+='<br><table cellspacing="3"width="100%">\
-                        <tr><td><div class="form-group" style="width:20%;"><button  class="btn btn-primary btn-send">Search Jobs</button></div></td>\
-                        </tr></table>'
-                  $(h).appendTo('#carrer');
-                        $('.btn-send').click(function() 
-                        {
-                        $(".btn-send").prop("disabled", true);
-                         clear_data();
-                         })                   
-                }         
-            }     
-      })
+    // var $table1=$(document).find('#carrer')
+   // frappe.call({
+   //      method:"hr_mgmt.templates.pages.careers.getcarrier",
+   //      callback: function(r) {
+
+   //              if(r.message) {                    
+   //                var h = "<div>"+r.message.res[0]['value']+"</div>"
+   //                h+='<br><table cellspacing="3"width="100%">\
+   //                      <tr><td><div class="form-group" style="width:20%;"><button  class="btn btn-primary btn-send">Search Jobs</button></div></td>\
+   //                      </tr></table>'
+   //                $(h).appendTo('#carrer');
+   //                      $('.btn-send').click(function() 
+   //                      {
+   //                      $(".btn-send").prop("disabled", true);
+   //                       clear_data();
+   //                       })                   
+   //              }         
+   //          }     
+   //    })
+    $('.btn-send').click(function() {
+        $(".btn-send").prop("disabled", true);
+            clear_data();
+     });
 });
 
 
@@ -41,7 +43,6 @@ var clear_data = function(){
                        
 	    })
         $('.uop').click(function() {
-        //console.log("in the serach click");
             redirect_url(); 
         })
 }
@@ -54,7 +55,7 @@ var show_details = function(){
     //console.log("in the show show_details");
     frm_data = get_frm_details()
     frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.get_jobs",
+        method:"hr_mgmt.templates.pages.careers.get_jobs",
         args:{
             "keyword" : $('[name="keyword"]').val(), 
             "jobid":$('[name="jobid"]').val(), 
@@ -67,20 +68,19 @@ var show_details = function(){
 		callback: function(r) {
                   $(".res").empty();
 				if(r.message) {                    
-                    //console.log("result cleared");
-					var $table1=$(document).find('.res')
-					var h = "<table width='100%' border='1'><thead style='padding=0px;'><tr style='padding=0px;'><th style='padding-left:5px'>Sr No.</th><th style='padding-left:5px'>Job ID</th><th style='padding-left:5px'>Role</th><th style='padding-left:5px'>Job Title</th><th style='padding-left:5px'>Location</th><th style='padding-left:5px'>Experience</th><th style='padding-left:5px'>Posted Date</th><th style='padding-left:5px'>Job details</th></tr></thead><tbody style='padding=0px;'>"
+                    var $table1=$(document).find('.res')
+                    var h = "<table class='table table-bordered'><thead><tr><th>Sr No.</th><th>Job ID</th><th>Role</th><th>Job Title</th><th>Location</th><th>Experience</th><th>Posted Date</th><th>Job details</th></tr></thead><tbody>"
                     for (i=0;i<r.message.length;i++){
                         var j=i+1
-                        h += '<tr style="padding=0px;">'
-                        h += '<td style="padding-left:5px">'+j+'</td>'
-                        h += "<td style='padding-left:5px'>"+r.message[i][0]+"</td>"
-                        h += '<td style="padding-left:5px">'+r.message[i][1]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][2]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][3]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][4]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][5]+'</td>'
-			h += "<td align='center'><button class='btn btn-primary btn-send' onclick=call_job('"+r.message[i][0]+"') style='background-color:#336699; color:#FFFFFF; font-size:12px; height:30px; width:100px; margin-bottom: 1px; margin-top: 1px; padding-top: 5px;'>Apply Now</button></td></tr>"   
+                        h += '<tr>'
+                        h += '<td>'+j+'</td>'
+                        h += "<td>"+r.message[i][0]+"</td>"
+                        h += '<td>'+r.message[i][1]+'</td>'
+                        h += '<td>'+r.message[i][2]+'</td>'
+                        h += '<td>'+r.message[i][3]+'</td>'
+                        h += '<td>'+r.message[i][4]+'</td>'
+                        h += '<td>'+r.message[i][5]+'</td>' 
+                        h += "<td align='center'><button class='btn btn-primary btn-send' onclick=call_job('"+r.message[i][0]+"') style='background-color:#336699; color:#FFFFFF; font-size:12px; height:30px; width:100px; margin-bottom: 1px; margin-top: 1px; padding-top: 5px;'>Apply Now</button></td></tr>"                
                        }
                     h+='</tbody></table>'
                     $(h).appendTo($table1);
@@ -105,7 +105,7 @@ var call_job = function(job){
     $("#carrer").empty();
     $('<div class="jobdtl" width="100%"></div>').appendTo('#carrer');
     frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.get_job",
+        method:"hr_mgmt.templates.pages.careers.get_job",
         args:{'job':job},        
 		callback: function(r) {
             //console.log(r.message['res'])
@@ -114,7 +114,7 @@ var call_job = function(job){
 					$(jb).appendTo('#carrer');
                   }	
                 if (r.message['usr']=='Yes'){
-                  $('<br><button  class="btn btn-primary btn-apply">Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button><div class="res" width="100%"></div>').appendTo('#carrer');		
+                  $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button><div class="res" width="100%"></div>').appendTo('#carrer');		
                   $('#carrer').find('.btn-apply').click(function() {         
                         $('.btn-apply').prop("disabled", true);
                         apply_job(r.message['res'][0][0])                        
@@ -126,7 +126,7 @@ var call_job = function(job){
 
                    }
                 else{
-                    $('<br><button  class="btn btn-primary btn-apply">Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
+                    $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
                      $('#carrer').find('.btn-apply').click(function() {         
                         //$('.btn-apply').prop("disabled", true);
                         alert("You have not logged in . Please login for apply for job.");                       
@@ -143,7 +143,7 @@ var call_job = function(job){
 
 var apply_job = function(jobid){
     frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.apply_job",
+        method:"hr_mgmt.templates.pages.careers.apply_job",
         args:{
             "jobid":jobid,            
         },        

@@ -90,7 +90,7 @@ function create(rowsno) {
 	//console.log(" in go new page");
 
 	var show_per_page = 1;
-    var number_of_items = $('#list').children('li').size();
+    var number_of_items = $('#list1').children('li').size();
     //console.log('outer count');
     //console.log(rowsno);
     number_of_items=rowsno;
@@ -118,7 +118,7 @@ function go_to_page(page_num) {
     var show_per_page = 1
     start_from = page_num *1;
     end_on = start_from + 1;
-    $('#list').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
+    $('#list1').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
     $('.page[longdesc=' + page_num + ']').addClass('active').siblings('.active').removeClass('active');
     $('#current_page').val(page_num);
 }
