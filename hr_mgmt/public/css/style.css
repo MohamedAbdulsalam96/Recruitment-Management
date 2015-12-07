@@ -121,3 +121,12 @@
 .form-horizontal {
   padding-top: 50px !important;
 }
+
+#our-services { padding: 40px 0; background: #f4f7f5; }
+#our-services h2 { margin: 0 0 30px; font-size: 26pt; }
+#our-services ul, .footer-nav ul, .stay-updated ul { list-style-type: none; margin: 0; padding: 0; }
+#our-services ul li { display: block; margin-bottom: 25px; }
+#our-services ul li .thumb { padding: 2px 0; }
+#our-services ul li .value-desc { padding-left: 5px; }
+#our-services ul li h3 { margin: 0 0 2px; font-family: 'ubuntumedium'; font-size: 18px; }
+#our-services-ul ul { list-style-type: circle; margin: 0; padding: 0; }
