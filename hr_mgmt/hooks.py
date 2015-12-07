@@ -21,9 +21,6 @@ base_template="templates/hcapita_base.html"
 web_include_css = "/assets/css/hr_mgmt.css"
 web_include_js = "/assets/js/hr_mgmt.js"
 
-web_include_css = "/assets/css/hr_mgmt.css"
-web_include_js = "/assets/js/hr_mgmt.js"
-
 # Home Pages
 # ----------
 
