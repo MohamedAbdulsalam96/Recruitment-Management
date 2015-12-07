@@ -1,25 +1,28 @@
 frappe.provide("frappe.ui.form");
 $(document).ready(function() {
-//console.log("calling hr_mgmt.templates.pages.carrer.getcarrier");
-var $table1=$(document).find('#carrer')
-   frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.getcarrier",
-        callback: function(r) {
+    // var $table1=$(document).find('#carrer')
+   // frappe.call({
+   //      method:"hr_mgmt.templates.pages.careers.getcarrier",
+   //      callback: function(r) {
 
-                if(r.message) {                    
-                  var h = "<div>"+r.message.res[0]['value']+"</div>"
-                  h+='<br><table cellspacing="3"width="100%">\
-                        <tr><td><div class="form-group" style="width:20%;"><button  class="btn btn-primary btn-send">Search Jobs</button></div></td>\
-                        </tr></table>'
-                  $(h).appendTo('#carrer');
-                        $('.btn-send').click(function() 
-                        {
-                        $(".btn-send").prop("disabled", true);
-                         clear_data();
-                         })                   
-                }         
-            }     
-      })
+   //              if(r.message) {                    
+   //                var h = "<div>"+r.message.res[0]['value']+"</div>"
+   //                h+='<br><table cellspacing="3"width="100%">\
+   //                      <tr><td><div class="form-group" style="width:20%;"><button  class="btn btn-primary btn-send">Search Jobs</button></div></td>\
+   //                      </tr></table>'
+   //                $(h).appendTo('#carrer');
+   //                      $('.btn-send').click(function() 
+   //                      {
+   //                      $(".btn-send").prop("disabled", true);
+   //                       clear_data();
+   //                       })                   
+   //              }         
+   //          }     
+   //    })
+    $('.btn-send').click(function() {
+        $(".btn-send").prop("disabled", true);
+            clear_data();
+     });
 });
 
 
@@ -40,7 +43,6 @@ var clear_data = function(){
                        
 	    })
         $('.uop').click(function() {
-        //console.log("in the serach click");
             redirect_url(); 
         })
 }
@@ -53,7 +55,7 @@ var show_details = function(){
     //console.log("in the show show_details");
     frm_data = get_frm_details()
     frappe.call({
-        method:"hr_mgmt.templates.pages.carrer.get_jobs",
+        method:"hr_mgmt.templates.pages.careers.get_jobs",
         args:{
             "keyword" : $('[name="keyword"]').val(), 
             "jobid":$('[name="jobid"]').val(), 
