@@ -1,24 +1,21 @@
 {% block title %}
-{{ heading or "News"}}
+{{ heading or "Careers"}}
 {% endblock %}
 {% block content %}
 <!-- no-sidebar -->
-
-<div><style>
+<div>
+	<style>
 	.page-header {
 color: white;
 background: #263248;
-text-align:left ;
+text-align: left;
 padding: 5px 5px;
 }
-.body{
-background-color: white; 
-}
 </style>
-	<table id='news' style="width:100%">			 
-	</table>
+	<table id='carrer' style="width:100%">			 
+	</table>	
 </div>
 <script>
-	{% include "templates/includes/news.js" %}
+	{% include "templates/includes/carrer.js" %}
 </script>
 {% endblock %}

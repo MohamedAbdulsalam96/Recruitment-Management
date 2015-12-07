@@ -1,9 +1,11 @@
 frappe.provide("frappe.ui.form");
 $(document).ready(function() {
+//console.log("calling hr_mgmt.templates.pages.carrer.getcarrier");
 var $table1=$(document).find('#carrer')
    frappe.call({
         method:"hr_mgmt.templates.pages.carrer.getcarrier",
         callback: function(r) {
+
                 if(r.message) {                    
                   var h = "<div>"+r.message.res[0]['value']+"</div>"
                   h+='<br><table cellspacing="3"width="100%">\
@@ -14,10 +16,8 @@ var $table1=$(document).find('#carrer')
                         {
                         $(".btn-send").prop("disabled", true);
                          clear_data();
-                         })
-                   
+                         })                   
                 }         
-
             }     
       })
 });
@@ -43,16 +43,11 @@ var clear_data = function(){
         //console.log("in the serach click");
             redirect_url(); 
         })
-
 }
-
 
 var redirect_url=function(){
      window.location.assign("../login#")
-    //console.log('in the re');
-
 } 
-
 
 var show_details = function(){
     //console.log("in the show show_details");
@@ -151,8 +146,6 @@ var apply_job = function(jobid){
             "jobid":jobid,            
         },        
         callback: function(r) {
-/*            console.log("r.message")
-            console.log(r.message)*/
             if (r.message=='Already Applied for the same job id'){
                 alert("You have already applied for same job '"+jobid+"'");
             }
@@ -162,6 +155,3 @@ var apply_job = function(jobid){
         }                     
     })
  }
- 
-
-
