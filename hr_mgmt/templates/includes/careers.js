@@ -71,19 +71,18 @@ var show_details = function(){
 		callback: function(r) {
                   $(".res").empty();
 				if(r.message) {                    
-                    //console.log("result cleared");
-					var $table1=$(document).find('.res')
-					var h = "<table width='100%' border='1'><thead style='padding-left:5px'><tr style='padding=0px;'><th style='padding-left:5px'>Sr No.</th><th style='padding-left:5px'>Job ID</th><th style='padding-left:5px'>Role</th><th style='padding-left:5px'>Job Title</th><th style='padding-left:5px'>Location</th><th style='padding-left:5px'>Experience</th><th style='padding-left:5px'>Posted Date</th><th style='padding-left:5px'>Job details</th></tr></thead><tbody style='padding=0px;'>"
+                    var $table1=$(document).find('.res')
+                    var h = "<table class='table table-bordered'><thead><tr><th>Sr No.</th><th>Job ID</th><th>Role</th><th>Job Title</th><th>Location</th><th>Experience</th><th>Posted Date</th><th>Job details</th></tr></thead><tbody>"
                     for (i=0;i<r.message.length;i++){
                         var j=i+1
-                        h += '<tr style="padding=0px;">'
-                        h += '<td style="padding-left:5px">'+j+'</td>'
-                        h += "<td style='padding-left:5px'>"+r.message[i][0]+"</td>"
-                        h += '<td style="padding-left:5px">'+r.message[i][1]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][2]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][3]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][4]+'</td>'
-                        h += '<td style="padding-left:5px">'+r.message[i][5]+'</td>' 
+                        h += '<tr>'
+                        h += '<td>'+j+'</td>'
+                        h += "<td>"+r.message[i][0]+"</td>"
+                        h += '<td>'+r.message[i][1]+'</td>'
+                        h += '<td>'+r.message[i][2]+'</td>'
+                        h += '<td>'+r.message[i][3]+'</td>'
+                        h += '<td>'+r.message[i][4]+'</td>'
+                        h += '<td>'+r.message[i][5]+'</td>' 
                         h += "<td align='center'><button class='btn btn-primary btn-send' onclick=call_job('"+r.message[i][0]+"') style='background-color:#336699; color:#FFFFFF; font-size:12px; height:30px; width:100px; margin-bottom: 1px; margin-top: 1px; padding-top: 5px;'>Apply Now</button></td></tr>"                
                        }
                     h+='</tbody></table>'
