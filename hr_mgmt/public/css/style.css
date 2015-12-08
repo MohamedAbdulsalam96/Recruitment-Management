@@ -78,20 +78,20 @@
 .sector-left p { padding-right: 14%; margin-bottom: 20px; }
 .sector-list li { font-family: 'ubuntumedium'; color: #13783c; font-size: 17px; margin-bottom: 2px; }
 .sector-list li span { width: 30px; height: 30px; display: inline-block; vertical-align: middle; }
-.it-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -1px; }
-.health-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -33px; }
-.bankg-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -62px; }
-.edu-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -93px; }
-.pharma-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -124px; }
-.hospitlty-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -153px; }
-.marine-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -4px -180px; }
-.marktg-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -212px; }
-.oilgas-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -5px -241px; }
-.engg-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -5px -272px; }
-.constrctn-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -303px; } 
-.acct-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -3px -333px; }
-.digital-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -5px -365px; }
-.finance-icon { background: url('../hr_mgmt/images/sprite.png') no-repeat -5px -395px; } 
+.it-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -1px; }
+.health-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -33px; }
+.bankg-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -62px; }
+.edu-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -93px; }
+.pharma-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -124px; }
+.hospitlty-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -153px; }
+.marine-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -4px -180px; }
+.marktg-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -212px; }
+.oilgas-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -5px -241px; }
+.engg-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -5px -272px; }
+.constrctn-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -303px; } 
+.acct-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -333px; }
+.digital-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -5px -365px; }
+.finance-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -5px -395px; } 
 .vision-mission { padding-left: 6.5% !important; color: #fff; }
 .vision-mission p { margin-bottom: 0; }
 .vision-mission h4 { font-family: 'ubuntumedium'; font-size: 20px; margin: 20px 0 3px; }
@@ -200,4 +200,3 @@
 #our-services ul li .value-desc { padding-left: 5px; }
 #our-services ul li h3 { margin: 0 0 2px; font-family: 'ubuntumedium'; font-size: 18px; }
 #our-services-ul ul { list-style-type: circle; margin: 0; padding: 0; }
-/* custom css ends */
