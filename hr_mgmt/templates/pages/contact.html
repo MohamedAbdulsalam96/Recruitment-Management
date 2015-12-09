@@ -10,16 +10,18 @@
 </section> 
 <!-- no-sidebar -->
 <div class="contact-content">
-	
 	<div class="row">
-		<div class="col-md-8">
-			<section id="intro-txt">
+		<section id="intro-txt">
     			<div class="container">
-        			<div class="hcapita-text text-justify"  style="padding-top:0px">
+        			<div class="hcapita-text" style="padding-top:0px">
 						<p>{{ introduction or "" }}</p>
 					</div>
 				</div>
-				<p id="contact-alert" class="alert alert-warning"
+		</section>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<p id="contact-alert" class="alert alert-warning"
 				style="display: none;">&nbsp;</p>
 			<br />
 			<div style="padding-left:20px" align="center">
@@ -36,18 +38,21 @@
 				{% endif %}
 				</select>
 				</div>
-			<div class="form-group">
-				<input class="form-control" name="email" type="text"
-				placeholder="Your Email Address" />
+				<div class="form-group">
+					<input class="form-control" name="email" type="text"
+					placeholder="Your Email Address" />
+				</div>
+				<div class="form-group">
+					<textarea rows="10" name="message" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-send">Send</button>
+				</div>
 			</div>
-			<div class="form-group">
-				<textarea rows="10" name="message" class="form-control"></textarea>
-			</div>
-			<div class="form-group">
-				<button class="btn btn-primary btn-send">Send</button>
-			</div>
+		</div>
+		<div class="col-md-4">
 			{% if address_title %}
-			<div class="col-md-3 col-md-offset-1 alert alert-warning"
+			<div class="col-md-8 col-md-offset-1 alert alert-warning"
 				itemscope itemtype="http://schema.org/PostalAddress">
 			<h4><i class="icon-map-marker"></i> {{ address_title }}</h4>
 			{% if address_line1 %}
@@ -70,8 +75,6 @@
 			{% endif %}
 			</div>
 			{% endif %}
-			</div>
-			</section>
 		</div>
 	</div>
 </div>
