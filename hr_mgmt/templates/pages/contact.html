@@ -10,16 +10,19 @@
 </section> 
 <!-- no-sidebar -->
 <div class="contact-content">
-	
 	<div class="row">
-		<div class="col-md-8">
-			<section id="intro-txt">
-    			<div class="container">
-        			<div class="hcapita-text text-justify"  style="padding-top:0px">
-						<p>{{ introduction or "" }}</p>
-					</div>
+		<section id="contact-us">
+			<div class="container">
+				<div class="hcapita-text" style="padding-top:0px">
+					<p>{{ introduction or "" }}</p>
 				</div>
-				<p id="contact-alert" class="alert alert-warning"
+			</div>
+		</section>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<p id="contact-alert" class="alert alert-warning"
 				style="display: none;">&nbsp;</p>
 			<br />
 			<div style="padding-left:20px" align="center">
@@ -36,43 +39,19 @@
 				{% endif %}
 				</select>
 				</div>
-			<div class="form-group">
-				<input class="form-control" name="email" type="text"
-				placeholder="Your Email Address" />
+				<div class="form-group">
+					<input class="form-control" name="email" type="text"
+					placeholder="Your Email Address" />
+				</div>
+				<div class="form-group">
+					<textarea rows="10" name="message" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary btn-send">Send</button>
+				</div>
 			</div>
-			<div class="form-group">
-				<textarea rows="10" name="message" class="form-control"></textarea>
-			</div>
-			<div class="form-group">
-				<button class="btn btn-primary btn-send">Send</button>
-			</div>
-			{% if address_title %}
-			<div class="col-md-3 col-md-offset-1 alert alert-warning"
-				itemscope itemtype="http://schema.org/PostalAddress">
-			<h4><i class="icon-map-marker"></i> {{ address_title }}</h4>
-			{% if address_line1 %}
-				<span itemprop="streetAddress">{{ address_line1 }}</span><br>
-			{% endif %}
-			{% if address_line2 %}
-				<span itemprop="streetAddress">{{ address_line2 }}</span><br>
-			{% endif %}
-			{% if city %}
-				<span itemprop="addressLocality">{{ city }}</span><br>
-			{% endif %}
-			{% if state %}
-				<span itemprop="addressRegion">{{ state }}</span><br>
-			{% endif %}
-			{% if pincode %}
-				<span itemprop="postalCode">{{ pincode }}</span><br>
-			{% endif %}
-			{% if country %}
-				<span itemprop="addressCountry">{{ country }}</span><br>
-			{% endif %}
-			</div>
-			{% endif %}
-			</div>
-			</section>
 		</div>
+		<div class="col-md-2"></div>		
 	</div>
 </div>
 <script>
