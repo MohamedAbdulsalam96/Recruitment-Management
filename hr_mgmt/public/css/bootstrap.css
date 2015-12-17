@@ -6703,8 +6703,8 @@ button.close {
   #recrutmnt-process a { top: 83% !important; }
   #recrtmnt-process img { width: 100%; } 
   #sector-vision { background: #f6f8f7 !important; }
-  .vision-mission { color: #666; padding-left: 0 !important; margin-top: 30px; }
-  .vision-mission ul li { color: #666; }
+  .vision-mission { color: #666 !important; padding-left: 0 !important; margin-top: 30px; }
+  .vision-mission ul li { color: #666 !important; }
   .sector-left p { padding-right: 0 !important; }
   .prmnt-recrtmnt-right h3 { margin-top: 20px !important; }
   .prmnt-recrtmnt-right h3, .prmnt-recrtmnt-right p { text-align: center; } 
