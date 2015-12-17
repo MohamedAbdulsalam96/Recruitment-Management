@@ -28,16 +28,35 @@ $(document).ready(function() {
 
 var clear_data = function(){
     $("#carrer").empty();
-    $('<br><table cellspacing="20" width="100%">\
-    	<tr><tr></td><td><div class="form-group"><input class="form-control" name="keyword" type="text" placeholder="Keyword" /></div>\
-    	</td><td><div class="form-group"><input class="form-control" name="jobid" type="text" placeholder="Job Id" /></div>\
-    	</td><td><div class="form-group"><input class="form-control" name="experience" type="text" placeholder="Experience" /></div>\
-    	</td><td><div class="form-group"><input class="form-control" name="location" type="text" placeholder="Location"/></div>\
-    	</td><td><div class="form-group"><input class="form-control" name="role" type="text" placeholder="Role" /></div></td></tr>\
-    	 <td><input class="form-control" name="job_from_date" type="date" placeholder="Posted Date From" /></div>\
-    	</td><td><input class="form-control" name="job_to_date" type="date" placeholder="Posted Date To" /></div></td><td align="center"><p><div class="form-group">\
-        <button  class="btn btn-primary btn-search">&nbsp;&nbsp;&nbsp;Search Jobs</button></div></td>\
-    <td></td></tr></table></table><div class="res" width="100%"></div>').appendTo('#carrer');
+    // $('<br><table cellspacing="20" width="100%">\
+    // 	<tr><tr></td><td><div class="form-group"><input class="form-control" name="keyword" type="text" placeholder="Keyword" /></div>\
+    // 	</td><td><div class="form-group"><input class="form-control" name="jobid" type="text" placeholder="Job Id" /></div>\
+    // 	</td><td><div class="form-group"><input class="form-control" name="experience" type="text" placeholder="Experience" /></div>\
+    // 	</td><td><div class="form-group"><input class="form-control" name="location" type="text" placeholder="Location"/></div>\
+    // 	</td><td><div class="form-group"><input class="form-control" name="role" type="text" placeholder="Role" /></div></td></tr>\
+    // 	 <td><input class="form-control" name="job_from_date" type="date" placeholder="Posted Date From" /></div>\
+    // 	</td><td><input class="form-control" name="job_to_date" type="date" placeholder="Posted Date To" /></div></td><td align="center"><p><div class="form-group">\
+    //     <button  class="btn btn-primary btn-search">&nbsp;&nbsp;&nbsp;Search Jobs</button></div></td>\
+    // <td></td></tr></table></table><div class="res" width="100%"></div>').appendTo('#carrer');
+$('<div class="row"><div class="col-xs-5" align="right">Keyword</div><div class="col-xs-7">\
+  <div class="form-group"><input class="form-control" name="keyword" type="text"\
+   placeholder="Keyword" /></div></div></div><div class="row"><div class="col-xs-5" align="right">\
+   Job ID</div><div class="col-xs-7"><div class="form-group"><input class="form-control"\
+    name="jobid" type="text" placeholder="Job Id" /></div></div></div><div class="row">\
+    <div class="col-xs-5" align="right">Experience</div><div class="col-xs-7"><div class="form-group">\
+    <input class="form-control" name="experience" type="text" placeholder="Experience" />\
+    </div></div></div><div class="row"><div class="col-xs-5" align="right">Location</div><div class="col-xs-7">\
+    <div class="form-group"><input class="form-control" name="location" type="text" placeholder="Location" />\
+    </div></div></div><div class="row"><div class="col-xs-5" align="right">Role</div><div class="col-xs-7">\
+    <div class="form-group"><input class="form-control" name="role" type="text" placeholder="Role" />\
+    </div></div></div><div class="row"><div class="col-xs-5" align="right">Posted Date From</div><div class="col-xs-7">\
+    <div class="form-group"><input class="form-control" name="job_from_date" type="date" \
+    placeholder="Posted Date From" /></div></div></div><div class="row"><div class="col-xs-5" align="right">\
+    Posted Date To</div><div class="col-xs-7"><div class="form-group"><input class="form-control" name="job_to_date" \
+    type="date" placeholder="Posted Date To" /></div></div></div><div class="row">\
+    <div class="col-xs-12" align="center"><div class="form-group"><button class="btn \
+    btn-primary btn-search">&nbsp;&nbsp;&nbsp;Search Jobs</button></div></div></div>\
+    <div class="row"><div class="col-xs-12 res"></div></div>').appendTo("#carrer")
     $('#carrer').find('.btn-search').click(function() {         
             show_details(); 
                        
@@ -80,7 +99,7 @@ var show_details = function(){
                         h += '<td>'+r.message[i][3]+'</td>'
                         h += '<td>'+r.message[i][4]+'</td>'
                         h += '<td>'+r.message[i][5]+'</td>' 
-                        h += "<td align='center'><button class='btn btn-primary btn-send' onclick=call_job('"+r.message[i][0]+"') style='background-color:#336699; color:#FFFFFF; font-size:12px; height:30px; width:100px; margin-bottom: 1px; margin-top: 1px; padding-top: 5px;'>Apply Now</button></td></tr>"                
+                        h += "<td align='center'><button class='btn btn-primary btn-send' onclick=call_job('"+r.message[i][0]+"') style='background-color: #13783c; color:#FFFFFF; font-size:12px; height:30px; width:100px; margin-bottom: 1px; margin-top: 1px; padding-top: 5px;'>Apply Now</button></td></tr>"                
                        }
                     h+='</tbody></table>'
                     $(h).appendTo($table1);
