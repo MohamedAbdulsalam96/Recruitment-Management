@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 console.log("hiii");
-/*frappe.call({
+frappe.call({
             type: "POST",
             method: "hr_mgmt.templates.pages.jobsapplied.get_jobs",
             callback: function(r) {
@@ -22,8 +22,13 @@ console.log("hiii");
                         h += '<td width="15%"><b>'+r.message[i][6]+'</b><br></td></tr></tbody>'
                         //h += r.message[i][0]+'</td></tr></tbody>' 
                        // console.log(h);                      
-                       }$(h).appendTo('#jobs');
+                       }
+                       $(h).appendTo('#jobs');
+                  }
+                  else{
+                    var h = '<tr align="center"><td>You haven\'t applied to any job posts yet ...</td></tr>'
+                    $(h).appendTo('#jobs');
                   }         
                 }
-        })*/
+        })
 });
