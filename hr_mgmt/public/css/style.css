@@ -200,3 +200,15 @@
 #our-services ul li .value-desc { padding-left: 5px; }
 #our-services ul li h3 { margin: 0 0 2px; font-family: 'ubuntumedium'; font-size: 18px; }
 #our-services-ul ul { list-style-type: circle; margin: 0; padding: 0; }
+
+.navbar .navbar-default .navbar-main {
+  background: #FFFFFF !important ;
+}
+
+input#login_email, input#signup_fullname {
+    margin-bottom: 10px !important;
+}
+
+nav.navbar, nav.navbar-default {
+  background-color: white !important
+}
