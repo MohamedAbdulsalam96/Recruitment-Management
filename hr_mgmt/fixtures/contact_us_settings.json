@@ -1,0 +1,19 @@
+{
+ "address_line1": "", 
+ "address_line2": "", 
+ "address_title": "", 
+ "city": "", 
+ "country": "", 
+ "creation": "2014-11-21 12:09:55.806101", 
+ "docstatus": 0, 
+ "doctype": "Contact Us Settings", 
+ "forward_to_email": "email.kadam@gmail.com", 
+ "introduction": "<section id=\"contact-us\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <h4 class=\"col-md-12 green\">The value of human resources contribution for any productive work depends on the deploy-able skills and competencies for creating wealth for the organization in terms of sell-able products and services. The skills and competencies of any person are developed and accumulated as capital over a period of time by means of education, training, development and employment in the specified work.</h4></div></div></section>", 
+ "modified": "2015-12-09 18:56:51.660500", 
+ "modified_by": "Administrator", 
+ "name": "Contact Us Settings", 
+ "owner": "Administrator", 
+ "pincode": "", 
+ "query_options": "Feedback/Comments\nBusiness Opportunity/Queries", 
+ "state": ""
+}
