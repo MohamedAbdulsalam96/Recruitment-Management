@@ -11,20 +11,20 @@ var clear_data = function(){
     $("#carrer").empty();
     $('<div class="row"><div class="col-xs-4" align="right">Keyword</div><div class="col-xs-8">\
       <div class="form-group"><input class="form-control" name="keyword" type="text"\
-       placeholder="Keyword" /></div></div></div><div class="row"><div class="col-xs-4" align="right">\
+        /></div></div></div><div class="row"><div class="col-xs-4" align="right">\
        Job ID</div><div class="col-xs-8"><div class="form-group"><input class="form-control"\
-        name="jobid" type="text" placeholder="Job Id" /></div></div></div><div class="row">\
+        name="jobid" type="text" /></div></div></div><div class="row">\
         <div class="col-xs-4" align="right">Experience</div><div class="col-xs-8"><div class="form-group">\
-        <input class="form-control" name="experience" type="text" placeholder="Experience" />\
+        <input class="form-control" name="experience" type="text" />\
         </div></div></div><div class="row"><div class="col-xs-4" align="right">Location</div><div class="col-xs-8">\
-        <div class="form-group"><input class="form-control" name="location" type="text" placeholder="Location" />\
+        <div class="form-group"><input class="form-control" name="location" type="text" />\
         </div></div></div><div class="row"><div class="col-xs-4" align="right">Role</div><div class="col-xs-8">\
-        <div class="form-group"><input class="form-control" name="role" type="text" placeholder="Role" />\
+        <div class="form-group"><input class="form-control" name="role" type="text" />\
         </div></div></div><div class="row"><div class="col-xs-4" align="right">Posted Date From</div><div class="col-xs-8">\
         <div class="form-group"><input class="form-control" name="job_from_date" type="date" \
-        placeholder="Posted Date From" /></div></div></div><div class="row"><div class="col-xs-4" align="right">\
+        /></div></div></div><div class="row"><div class="col-xs-4" align="right">\
         Posted Date To</div><div class="col-xs-8"><div class="form-group"><input class="form-control hasDatepicker" name="job_to_date" \
-        type="Date" placeholder="Posted Date To" /></div></div></div><div class="row">\
+        type="Date"/></div></div></div><div class="row">\
         <div class="col-xs-12" align="center"><div class="form-group"><button class="btn \
         btn-primary btn-search">&nbsp;&nbsp;&nbsp;Search Jobs</button></div></div></div>\
         <div class="row"><div class="col-xs-12 res"></div></div>').appendTo("#carrer")
