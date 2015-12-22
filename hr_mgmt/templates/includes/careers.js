@@ -125,7 +125,7 @@ var call_job = function(job){
                     $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
                      $('#carrer').find('.btn-apply').click(function() {         
                         //$('.btn-apply').prop("disabled", true);
-                        alert("You have not logged in . Please login for apply for job.");                       
+                        frappe.msgprint("You have not logged in . Please login for apply for job.");                       
                       })
                     $('#carrer').find('.btn-back').click(function() {         
                         $('.btn-back').prop("disabled", true);
@@ -145,10 +145,10 @@ var apply_job = function(jobid){
         },        
         callback: function(r) {
             if (r.message=='Already Applied for the same job id'){
-                alert("You have already applied for same job '"+jobid+"'");
+                frappe.msgprint("You have already applied for same job '"+jobid+"'");
             }
             else{
-                alert("You have successfully applied to Job '"+jobid+"'");
+                frappe.msgprint("You have successfully applied to Job '"+jobid+"'");
             }
         }                     
     })
