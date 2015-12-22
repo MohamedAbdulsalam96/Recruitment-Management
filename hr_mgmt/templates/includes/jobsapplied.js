@@ -43,7 +43,7 @@ display_job_description = function(job_id){
     callback: function(r) {
       $("#jobs").empty()
       var jd = r.message.res
-      var tab = '<tbody><tr><td colspan="2" align="center"><b>Job Description</b></td><tr></td></tr><tr><td align="right"><b>Job ID</b> </td><td>' + jd[0][0] + '</td></tr><tr><td align="right"><b>Job Title</b> </td><td>' + jd[0][1] + '</td></tr><tr><td align="right"><b>Location</b> </td><td>' + jd[0][2] + '</td></tr><tr><td align="right"><b>Experience Required </b></td><td>' + jd[0][3] + '</td></tr><tr><td align="right"><b>Job Role </b></td><td>' + jd[0][4] + '</td></tr><tr><td align="right"><b>Qualification</b> </td><td>' + jd[0][5] + '</td></tr><tr><td align="right"><b>Skills Required</b> </td><td>' + jd[0][6] + '</td></tr><tr><td align="right"><b>Job Description</b> </td><td>' + jd[0][7] + '</td></tr></tbody>'
+      var tab = '<tbody><tr><td colspan="2" align="center"><b>Job Description</b></td><tr></td></tr><tr><td align="right" width="35%"><b>Job ID</b> </td><td>' + jd[0][0] + '</td></tr><tr><td align="right" width="35%"><b>Job Title</b> </td><td>' + jd[0][1] + '</td></tr><tr><td align="right" width="35%"><b>Location</b> </td><td>' + jd[0][2] + '</td></tr><tr><td align="right" width="35%"><b>Experience Required </b></td><td>' + jd[0][3] + '</td></tr><tr><td align="right" width="35%"><b>Job Role </b></td><td>' + jd[0][4] + '</td></tr><tr><td align="right" width="35%"><b>Qualification</b> </td><td>' + jd[0][5] + '</td></tr><tr><td align="right" width="35%"><b>Skills Required</b> </td><td>' + jd[0][6] + '</td></tr><tr><td align="right" width="35%"><b>Job Description</b> </td><td>' + jd[0][7] + '</td></tr></tbody>'
       $(tab).appendTo('#jobs');
     }
   });
