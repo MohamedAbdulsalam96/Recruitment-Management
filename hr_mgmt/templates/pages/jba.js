@@ -1,5 +1,4 @@
 $(document).ready(function() {
-console.log("hiii in jobs applied");
 frappe.call({
             type: "POST",
             method: "hr_mgmt.templates.pages.jba.get_jobs",
@@ -12,7 +11,7 @@ frappe.call({
                         var j=i+1
                         //h += '<tr><td width="20%">'
                         h += '<td width="4%"><b>'+i+'</b><br></td>'
-                        h += '<td width="10%"><b><a href="http://localhost:9000/desk#Form/Job Description/'+r.message[i][0]+'">'+r.message[i][0]+'</a></b><br></td>'
+                        h += '<td width="10%"><b><a href="'+ window.Location.origin +'/desk#Form/Job Description/'+r.message[i][0]+'">'+r.message[i][0]+'</a></b><br></td>'
                         h += '<td width="20%"><b>'+r.message[i][1]+'</b><br></td>'
                         h += '<td width="20%"><b>'+r.message[i][2]+'</b><br></td>'
                         h += '<td width="12%"><b>'+r.message[i][3]+'</b><br></td>'
