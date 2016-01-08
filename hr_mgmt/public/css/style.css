@@ -76,7 +76,7 @@
 #abt-us p { font-size: 15px; margin: 0; color: #535353; }
 #sector-vision { font-size: 15px; padding: 40px 0; margin-bottom: 30px; background: url('../hr_mgmt/images/abt-bg.jpg') repeat-y center center; }
 .sector-left p { padding-right: 14%; margin-bottom: 20px; }
-.sector-list li { font-family: 'ubuntumedium'; color: #13783c; font-size: 17px; margin-bottom: 2px; }
+.sector-list li { font-family: 'ubuntumedium'; color: #13783c; font-size: 15px; margin-bottom: 2px; }
 .sector-list li span { width: 30px; height: 30px; display: inline-block; vertical-align: middle; }
 .it-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -1px; }
 .health-icon { background: url('../hr_mgmt/images/sprite-icon.png') no-repeat -3px -33px; }
@@ -107,7 +107,7 @@
 .prmnt-recrtmnt-left { padding: 0  5%; }
 .prmnt-recrtmnt-right h3 { margin: 0 0 20px; }
 #recrutmnt-spcl { padding: 50px 0 60px; }
-#recrutmnt-spcl .sector-list li { font-family: 'ubuntulight'; font-size: 16px; margin-bottom: 7px; }
+#recrutmnt-spcl .sector-list li { font-family: 'ubuntulight'; font-size: 15px; margin-bottom: 7px; }
 #recrutmnt-spcl h3 { font-size: 22px; margin: 0 0 40px; }
 #recrtmnt-services { margin-bottom: 50px; }
 #recrtmnt-services .service-col { 
