@@ -4,17 +4,12 @@ window.disable_signup = {{ disable_signup and "true" or "false" }};
 window.login = {};
 
 login.bind_events = function() {
-	console.log("bind_events")
 	if(!window.pageInitialized){
-		console.log("pageInitialized");
 		$(window).on("hashchange", function() {
-			console.log("hashchange in");
 			login.route();
-			console.log("hashchange out");
 		});
 
 		$(".form-login").on("submit", function(event) {
-			console.log("form login")
 			event.preventDefault();
 			var args = {};
 			args.cmd = "login";
@@ -24,7 +19,6 @@ login.bind_events = function() {
 				frappe.msgprint(__("Both login and password required"));
 				return false;
 			}
-			console.log("before call");
 			login.call(args);
 		});
 
@@ -58,9 +52,7 @@ login.bind_events = function() {
 
 login.route = function() {
 	var route = window.location.hash.slice(1);
-	console.log(["route 1", route]);
 	if(!route) route = "login";
-	console.log(["route 2", route]);
 	login[route]();
 }
 
@@ -82,7 +74,6 @@ login.signup = function() {
 
 // Login
 login.call = function(args) {
-	console.log("in login call")
 
 	$('.btn-primary').prop("disabled", true);
 
@@ -112,7 +103,6 @@ login.login_handlers = (function() {
 	var login_handlers = {
 		200: function(data) {
 			if(data.message=="Logged In") {
-				console.log(["getting url args",get_url_arg("redirect-to")])
 				window.location.href = get_url_arg("redirect-to") || "/desk";
 			} else if(data.message=="No App") {
 				if(localStorage) {
@@ -138,9 +128,7 @@ login.login_handlers = (function() {
 
 frappe.ready(function() {
 	if(!window.pageInitialized){
-		console.log("onload")
 		window.location.hash = "#login";
-		console.log(window.location.hash);
 		login.bind_events();
 		login.login();
 		$(".form-signup, .form-forgot").removeClass("hide");

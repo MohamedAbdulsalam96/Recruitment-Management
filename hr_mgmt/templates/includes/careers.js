@@ -30,7 +30,6 @@ var clear_data = function(){
         <div class="row"><div class="col-xs-12 res"></div></div>').appendTo("#carrer")
     $('#carrer').find('.btn-search').click(function() {         
             show_details(); 
-                       
 	    })
         $('.uop').click(function() {
             redirect_url(); 
@@ -42,7 +41,6 @@ var redirect_url=function(){
 } 
 
 var show_details = function(){
-    //console.log("in the show show_details");
     frm_data = get_frm_details()
     frappe.call({
         method:"hr_mgmt.templates.pages.careers.get_jobs",
@@ -104,13 +102,62 @@ var call_job = function(job){
         method:"hr_mgmt.templates.pages.careers.get_job",
         args:{'job':job},        
 		callback: function(r) {
-            //console.log(r.message['res'])
-               if(r.message['res'][0]) {
-					var jb="<marquee behavior='SCROLL' ><font size='4' color='green'>You can update your profile before applying for this job. Click on your name (Right corner), go to 'My Profile'.</font></marquee><br><table width='100%' ><tr style='padding=0px;'><tr><td><b>Job Title</b></td><td>"+r.message['res'][0][1]+"</td></tr><tr><td><b>Job ID</b></td><td>"+r.message['res'][0][0]+"</td></tr><tr><td><b>Location</b></td><td>"+r.message['res'][0][2]+"</td></tr><tr><td><b>Experience Required</b></td><td>"+r.message['res'][0][3]+"</td></tr><tr><td><b>Job Role</b></td><td>"+r.message['res'][0][4]+"</td></tr><tr><td><b>Qualification</b></td><td>"+r.message['res'][0][5]+"</td></tr><tr><td><b>Skills Required</b></td><td>"+r.message['res'][0][6]+"</td></tr><tr><td><b>Job Description</b></td><td>"+r.message['res'][0][8]+"</td></tr></table>"
-					$(jb).appendTo('#carrer');
-                  }	
+            me = this;
+            if(r.message['res'][0]) {
+                jb = "<div class='col-xs-12'>\
+                          <div class='row'>\
+                            <div class='col-xs-12'>\
+                              <marquee behavior='SCROLL'>\
+                                <font size='4' color='green'>You can update your profile before applying for this job. Click on your name (Right corner), go to 'My Profile'.</font>\
+                              </marquee>\
+                            </div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Job Title</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][0] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Job ID</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][1] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Location</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][2] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Experience Required</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][3] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Job Role</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][4] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Qualification</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][5] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Skills Required</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][6] +"</div>\
+                          </div>\
+                          <div class='row'>\
+                            <div class='col-xs-4' align='right'><b>Job Description</b></div>\
+                            <div class='col-xs-8'>"+ r.message["res"][0][8] +"</div>\
+                          </div>\
+                        </div>"
+				// var jb="<marquee behavior='SCROLL' ><font size='4' color='green'>You can update your profile before applying for this job. Click on your name (Right corner), go to 'My Profile'.</font></marquee><br><table width='100%' ><tr style='padding=0px;'><tr><td><b>Job Title</b></td><td>"+r.message['res'][0][1]+"</td></tr><tr><td><b>Job ID</b></td><td>"+r.message['res'][0][0]+"</td></tr><tr><td><b>Location</b></td><td>"+r.message['res'][0][2]+"</td></tr><tr><td><b>Experience Required</b></td><td>"+r.message['res'][0][3]+"</td></tr><tr><td><b>Job Role</b></td><td>"+r.message['res'][0][4]+"</td></tr><tr><td><b>Qualification</b></td><td>"+r.message['res'][0][5]+"</td></tr><tr><td><b>Skills Required</b></td><td>"+r.message['res'][0][6]+"</td></tr><tr><td><b>Job Description</b></td><td>"+r.message['res'][0][8]+"</td></tr></table>"
+                $(jb).appendTo('#carrer');
+              }
+              btn = "<!-- buttons -->\
+                      <div class='row' align='center'>\
+                        <div class='col-xs-12'>\
+                          <button class='btn btn-primary btn-apply'>Apply Now</button>\
+                          <button class='btn btn-primary btn-back'>Back</button><div class='res' width='100%'></div>\
+                        </div>\
+                      </div>"
                 if (r.message['usr']=='Yes'){
-                  $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button><div class="res" width="100%"></div>').appendTo('#carrer');		
+                  // $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button><div class="res" width="100%"></div>').appendTo('#carrer');
+                  $(btn).appendTo('#carrer')
                   $('#carrer').find('.btn-apply').click(function() {         
                         $('.btn-apply').prop("disabled", true);
                         apply_job(r.message['res'][0][0])                        
@@ -122,7 +169,8 @@ var call_job = function(job){
 
                    }
                 else{
-                    $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
+                    // $('<br><button  class="btn btn-primary btn-apply" >Apply Now</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary btn-back">Back</button>').appendTo('#carrer'); 
+                    $(btn).appendTo('#carrer')
                      $('#carrer').find('.btn-apply').click(function() {         
                         //$('.btn-apply').prop("disabled", true);
                         frappe.msgprint("You have not logged in . Please login for apply for job.");                       
@@ -133,7 +181,7 @@ var call_job = function(job){
                     })       
                      }
                   
-				}        
+                }        
       })       
 }
 

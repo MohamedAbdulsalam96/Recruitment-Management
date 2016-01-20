@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   frappe.call({
     type: "POST",
@@ -31,7 +30,6 @@ $(document).ready(function() {
         }
     });
 });
-
 
 display_job_description = function(job_id){
   frappe.call({

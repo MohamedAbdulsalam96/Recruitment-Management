@@ -1,30 +1,3 @@
-
-/*$(document).ready(function() {
-//console.log("hiii");
-frappe.call({
-			type: "POST",
-			method: "hr_mgmt.templates.pages.news.get_news",
-			callback: function(r) {
-				if(r.message) {
-					console.log(r.message);
-					var $table1=$(document).find('#news')
-                    var h = "<table align='center' cellpadding='150' cellspacing='13' width='80%'><tr style='padding=0px;'></thead><tbody style='padding=0px;'>"
-                    for (i=0;i<r.message.length;i++){
-                        var j=i+1
-                        h += '<tr><td width="50%">'
-                        if (r.message[i][1]){
-                            h += "<img src='"+r.message[i][1]+"'  width='100%' height='250'><br> "
-                        }
-                        h += '<b>'+r.message[i][3]+'</b><br>'
-                        h += '<b>'+r.message[i][2]+'</b><br>'
-                        h += r.message[i][0]+'</td></tr></tbody>'                       
-                       }$(h).appendTo('#news');
-                  }			
-				}
-		})
-});*/
-
-
 $(document).ready(function() {
 var count=0;
 	frappe.call({
@@ -32,14 +5,11 @@ var count=0;
 			method: "hr_mgmt.templates.pages.news.get_news",
 			callback: function(r) {
 				if(r.message) {
-					//console.log(r.message);
 					var $table1=$(document).find('#news')
                     var h = "<br><ul id='list' style='padding:0'>"
                     for (i=0;i<r.message.length;i++){
                         //var j=i+1
                         count+=1;
-                        //console.log('in for loop count');
-    					//console.log(count);
                         h+='<li>'
                         if (r.message[i][1]){
                             h += "<img src='"+r.message[i][1]+"'  width='100%' height='250'><br> <br>"
@@ -48,22 +18,15 @@ var count=0;
                         h += '<b>'+r.message[i][2]+'</b><br><br>'
                         h += r.message[i][0]+'</li>'                                              
                        }
-                       //console.log('exit for  count');
-   					   //console.log(count);
    					   create(count)
                        h+='</ul>'
                        $(h).appendTo('#news');
                        go_to_page(0)
-                       //console.log("hhhh");
-                       //console.log(h);
                   }			
 				}
 		})
-/*//console.log("hiii");
     var show_per_page = 1;
     var number_of_items = $('#list').children('li').size();
-    console.log('outer count');
-    console.log(count);
     number_of_items=3;
     var show_per_page=1
     var number_of_pages = Math.ceil(number_of_items / show_per_page);   
@@ -78,7 +41,6 @@ var count=0;
         current_link++;
     }
     navigation_html += '<a class="next" onclick="next()">Next</a>';
-    //console.log(navigation_html)
     $('.controls').html(navigation_html);
     $('.controls .page:first').addClass('active');
     $('#list').children().css('display', 'none');
@@ -87,12 +49,9 @@ var count=0;
 });
 
 function create(rowsno) {
-	//console.log(" in go new page");
 
 	var show_per_page = 1;
     var number_of_items = $('#list1').children('li').size();
-    //console.log('outer count');
-    //console.log(rowsno);
     number_of_items=rowsno;
     var show_per_page=1
     var number_of_pages = Math.ceil(number_of_items / show_per_page);   
@@ -106,7 +65,6 @@ function create(rowsno) {
         current_link++;
     }
     navigation_html += '<a class="next" onclick="next()">Next</a>';
-    //console.log(navigation_html)
     $('.controls').html(navigation_html);
     $('.controls .page:first').addClass('active');
     $('#list').children().css('display', 'none');
@@ -114,7 +72,6 @@ function create(rowsno) {
 }
 
 function go_to_page(page_num) {
-	//console.log(" in go new page");
     var show_per_page = 1
     start_from = page_num *1;
     end_on = start_from + 1;
@@ -123,9 +80,7 @@ function go_to_page(page_num) {
     $('#current_page').val(page_num);
 }
 function previous() {
-	//console.log("in previous function");
     new_page = parseInt($('#current_page').val(), 0) - 1;
-    //console.log(new_page);
     //if there is an item before the current active link run the function
     if ($('.active').prev('.page').length == true) {
         go_to_page(new_page);
@@ -133,12 +88,9 @@ function previous() {
 }
 
 function next() {
-	//console.log("in next function");
     new_page = parseInt($('#current_page').val(), 0) + 1;
-    //console.log(new_page);
     //if there is an item after the current active link run the function
     if ($('.active').next('.page').length == true) {
-    	//console.log("active");
         go_to_page(new_page);
     }
 }

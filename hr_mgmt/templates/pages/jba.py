@@ -13,7 +13,5 @@ no_sitemap = 1
 @frappe.whitelist(allow_guest='True')
 def get_jobs():
 	qry="select a.name,a.role,a.job_title,a.location,a.experience_required,b.status,date_format(b.creation,'%d/%m/%Y') from `tabJob Description` a, `tabJob Applied` b where a.name=b.job_id and b.parent='"+frappe.session.user+"'"
-	#frappe.errprint(qry)
 	res=frappe.db.sql(qry)
-	#frappe.errprint(res)
 	return res
